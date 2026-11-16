@@ -6,7 +6,7 @@
 
 | 환경 | 브랜치 | URL | 플랫폼 |
 |---|---|---|---|
-| **운영** | `main` | https://하온.com | Cloudflare Pages |
+| **운영** | `main` | https://산재전문.com | Cloudflare Pages |
 | **개발** | `dev` | https://jjj4531.github.io/haon_industrial_web | GitHub Pages |
 
 ---
@@ -146,7 +146,7 @@ colors: {
 
 5. 커스텀 도메인 연결:
     - Settings > Custom domains
-    - `하온.com` 도메인 추가 및 DNS 설정
+    - `산재전문.com` 도메인 추가 및 DNS 설정
 
 **배포 방법:**
 - `main` 브랜치에 push하면 자동으로 Cloudflare Pages에 배포됩니다.
