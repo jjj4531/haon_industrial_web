@@ -4,9 +4,9 @@
 
 ## 배포 환경
 
-| 환경 | 브랜치 | URL | 플랫폼 |
-|---|---|---|---|
-| **운영** | `main` | https://하온.com | Cloudflare Pages |
+| 환경 | 브랜치 | URL                                           | 플랫폼 |
+|---|---|-----------------------------------------------|---|
+| **운영** | `main` | https://산재전문.com                          | Cloudflare Pages |
 | **개발** | `dev` | https://jjj4531.github.io/haon_industrial_web | GitHub Pages |
 
 ---
