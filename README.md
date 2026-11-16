@@ -1,20 +1,179 @@
-# 하온 산재 전문 웹사이트 정보
+# 하온 노동법률사무소
 
-이 프로젝트는 산재 전문 공인노무사 사무소의 공식 브로슈어 웹사이트입니다.
+> 산재 전문 공인노무사 — 하늘아래 모든 분들이 온전한 행복을 누릴 수 있도록
 
-## 핵심 정보
+## 배포 환경
 
-**배포 구성:**
-- 운영: Cloudflare Pages의 `main` 브랜치 (https://산재전문.com)
-- 개발: GitHub Pages의 `dev` 브랜치 (https://jjj4531.github.io/haon_industrial_web/)
+| 환경 | 브랜치 | URL | 플랫폼 |
+|---|---|---|---|
+| **운영** | `main` | https://하온.com | Cloudflare Pages |
+| **개발** | `dev` | https://jjj4531.github.io/haon_industrial_web | GitHub Pages |
 
-**기술 스택:**
-사이트는 "Astro v4" 프레임워크와 "Tailwind CSS v3"로 구축되었으며, 정적 사이트 생성에 최적화되어 있습니다.
+---
 
-## 주요 서비스 분야
+## 소개
 
-사무소는 소음성 난청, 근골격계 질환 (인공관절, 허리디스크, 어깨·손목 등), 심뇌혈관 질환 (뇌출혈, 거미막하출혈, 급성심근경색 등), 폐질환 및 직업성 암, 유족보상, 출퇴근 재해, 평균임금 정정 및 불승인 이의제기 관련 업무를 전문으로 합니다.
+하온 노동법률사무소의 공식 브로슈어 웹사이트입니다.
+산업재해·업무상질병 산재 신청, 평균임금 정정, 불승인 이의제기 등 노동법률 서비스를 안내합니다.
 
-## 배포 프로세스
+**주요 전문 분야**
 
-개발 작업은 `dev` 브랜치에서 진행하고, 준비가 되면 `main` 브랜치로 병합하여 운영 환경에 배포됩니다. 두 환경 모두 자동화된 배포 파이프라인으로 운영됩니다.
+- 소음성 난청
+- 근골격계 질환 (인공관절, 허리디스크, 어깨·손목 등)
+- 심뇌혈관 질환 (뇌출혈, 거미막하출혈, 급성심근경색 등)
+- 폐질환 / 직업성 암
+- 유족보상 / 출퇴근 재해
+- 평균임금 정정 / 불승인 이의제기
+
+---
+
+## 기술 스택
+
+| 항목 | 내용 |
+|---|---|
+| 프레임워크 | [Astro](https://astro.build/) v4 |
+| 스타일 | [Tailwind CSS](https://tailwindcss.com/) v3 |
+| 배포 (운영) | Cloudflare Pages (`main` 브랜치) |
+| 배포 (개발) | GitHub Pages (`dev` 브랜치) |
+
+---
+
+## 로컬 실행
+
+```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 (http://localhost:4321)
+npm run dev
+
+# 프로덕션 빌드
+npm run build
+
+# 빌드 결과물 미리보기
+npm run preview
+```
+
+---
+
+## 페이지 구성
+
+| 경로 | 페이지 |
+|---|---|
+| `/` | 홈 |
+| `/company-overview` | 대표 인사말 |
+| `/specialty` | 전문 분야 |
+| `/cases` | 성공사례 |
+| `/location` | 오시는 길 |
+| `/consulting` | 무료상담 신청 |
+| `/guides/hearing-loss` | 가이드 — 소음성 난청 |
+| `/guides/musculoskeletal` | 가이드 — 근골격계 질환 |
+| `/guides/cardiovascular` | 가이드 — 심뇌혈관 질환 |
+| `/guides/lung-disease` | 가이드 — 폐질환 |
+| `/guides/occupational-cancer` | 가이드 — 직업성 암 |
+| `/guides/survivors-compensation` | 가이드 — 유족보상 |
+| `/guides/commuting-accident` | 가이드 — 출퇴근 재해 |
+
+---
+
+## 프로젝트 구조
+
+```
+src/
+├── layouts/
+│   └── Layout.astro              # 공통 레이아웃 (Head, Header, Footer)
+├── components/
+│   ├── Header.astro              # 네비게이션 (드롭다운, 모바일 메뉴)
+│   └── Footer.astro              # 푸터
+├── pages/
+│   ├── index.astro
+│   ├── company-overview.astro
+│   ├── specialty.astro
+│   ├── cases.astro
+│   ├── location.astro
+│   ├── consulting.astro
+│   └── guides/
+│       ├── hearing-loss.astro
+│       ├── musculoskeletal.astro
+│       ├── cardiovascular.astro
+│       ├── lung-disease.astro
+│       ├── occupational-cancer.astro
+│       ├── survivors-compensation.astro
+│       └── commuting-accident.astro
+└── utils/
+    └── url.ts                    # base URL 유틸 (GitHub Pages 경로 처리)
+public/
+└── logo.svg                      # 하온 로고 (파비콘 겸용)
+```
+
+---
+
+## 주요 설정
+
+### 연락처·주소 변경
+
+`src/components/Header.astro`, `src/components/Footer.astro`, `src/pages/location.astro` 내 전화번호·주소·이메일을 수정합니다.
+
+### 색상 테마
+
+`tailwind.config.mjs`에서 `navy` / `gold` 값을 조정합니다.
+
+```js
+colors: {
+  navy: { 700: '#1e3a5c', 800: '#142d4c', 900: '#0c1f35', 950: '#071526' },
+  gold: { 400: '#e8c84a', 500: '#c9a227', 600: '#a8861e' },
+}
+```
+
+---
+
+## 배포 가이드
+
+### Cloudflare Pages (운영 환경)
+
+**초기 설정:**
+
+1. Cloudflare Dashboard > Pages > Create a project
+2. GitHub 저장소 연결: `jjj4531/haon_industrial_web`
+3. 빌드 설정:
+    - **Production branch:** `main`
+    - **Build command:** `npm run build`
+    - **Build output directory:** `dist`
+    - **Node version:** 20
+
+4. 환경 변수:
+    - `NODE_VERSION`: `20`
+
+5. 커스텀 도메인 연결:
+    - Settings > Custom domains
+    - `하온.com` 도메인 추가 및 DNS 설정
+
+**배포 방법:**
+- `main` 브랜치에 push하면 자동으로 Cloudflare Pages에 배포됩니다.
+
+### GitHub Pages (개발 환경)
+
+**초기 설정:**
+
+1. GitHub 저장소 Settings > Pages
+2. Source: **GitHub Actions**
+
+**배포 방법:**
+- `dev` 브랜치에 push하면 자동으로 GitHub Actions가 빌드하고 배포합니다.
+- URL: https://jjj4531.github.io/haon_industrial_web
+
+---
+
+## 워크플로우
+
+```bash
+# 개발 작업
+git checkout dev
+# ... 작업 및 커밋 ...
+git push origin dev  # → GitHub Pages에 자동 배포 (개발 환경)
+
+# 운영 배포
+git checkout main
+git merge dev
+git push origin main  # → Cloudflare Pages에 자동 배포 (운영 환경)
+```
