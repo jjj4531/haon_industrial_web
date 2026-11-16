@@ -2,8 +2,8 @@
 
 > 산재 전문 공인노무사 — 하늘아래 모든 분들이 온전한 행복을 누릴 수 있도록
 
-**라이브 사이트:** https://haon_industrial_web.pages.dev/ (Cloudflare Pages)  
-**GitHub Pages:** https://jjj4531.github.io/haon_industrial_web/
+**운영 사이트 (Cloudflare Pages):** https://산재전문.com
+**개발 사이트 (GitHub Pages):** https://jjj4531.github.io/haon_industrial_web/
 
 ---
 
@@ -29,7 +29,7 @@
 |---|---|
 | 프레임워크 | [Astro](https://astro.build/) v4 |
 | 스타일 | [Tailwind CSS](https://tailwindcss.com/) v3 |
-| 배포 | Cloudflare Pages (`cloudflare` 브랜치) / GitHub Pages (`main` 브랜치) |
+| 배포 | Cloudflare Pages (`main` 브랜치 - 운영) / GitHub Pages (`dev` 브랜치 - 개발) |
 
 ---
 
@@ -48,6 +48,22 @@ npm run build
 # 빌드 결과물 미리보기
 npm run preview
 ```
+
+---
+
+## 배포 환경
+
+### 운영 환경 (Production)
+- **브랜치:** `main`
+- **배포 플랫폼:** Cloudflare Pages
+- **URL:** https://산재전문.com
+- **배포 방식:** Cloudflare Pages 자동 배포
+
+### 개발 환경 (Development)
+- **브랜치:** `dev`
+- **배포 플랫폼:** GitHub Pages
+- **URL:** https://jjj4531.github.io/haon_industrial_web/
+- **배포 방식:** GitHub Actions 자동 배포 (`.github/workflows/deploy-gh-pages.yml`)
 
 ---
 
